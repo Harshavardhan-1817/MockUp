@@ -52,7 +52,7 @@ export default function Dashboard({ user }) {
 
   const fetchHistory = async () => {
     try {
-      const res = await axios.get(`http://localhost:8000/interview/history/${user.id}`)
+      const res = await axios.get(`${API_BASE}/interview/history/${user.id}`)
       const data = res.data.history || []
       setHistory(data)
       if (data.length > 0) {

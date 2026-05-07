@@ -1,4 +1,4 @@
-import API_BASE from '../config'
+import API_BASE from '../config' 
 import { useState } from 'react'
 import { useNavigate, useLocation } from 'react-router-dom'
 import { motion } from 'framer-motion'
@@ -21,7 +21,7 @@ export default function InterviewSetup({ user }) {
     setLoading(true)
     setError('')
     try {
-      const res = await axios.post('http://localhost:8000/questions/generate', {
+      const res = await axios.post(`${API_BASE}/questions/generate`, {
         job_description: jd, interview_type: type, difficulty, count
       })
       navigate('/interview', {

@@ -237,7 +237,7 @@ export default function InterviewRoom({ user }) {
     }
 
     try {
-      const res = await axios.post('http://localhost:8000/evaluate', {
+      const res = await axios.post(`${API_BASE}/evaluate`, {
         question: currentQuestion.question,
         answer: answerText,
         job_description: jd,
@@ -263,7 +263,7 @@ export default function InterviewRoom({ user }) {
     if (nextIndex >= questions.length) {
       const avg = newResults.reduce((a, r) => a + (r.final_score || 0), 0) / newResults.length
       try {
-        await axios.post('http://localhost:8000/interview/save', {
+        await axios.post(`${API_BASE}/interview/save`, {
           user_id: user.id,
           role_name: role_name || 'Interview Session',
           job_description: jd,
