@@ -1,4 +1,4 @@
-MockUp
+# MOCKUP
 
 MockUp is an AI-powered mock interview platform built to help students and job seekers practice interviews in a more realistic way.
 
